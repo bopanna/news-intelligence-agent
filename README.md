@@ -31,4 +31,27 @@ Collector → Processor → Summarizer → Storage → Email
 ### Processor
 - Deduplication
 - Ranking
-- Me
+- Memory filtering
+- Topic clustering
+
+### Summarizer
+Supports multiple providers:
+- Ollama (local)
+- Groq (cloud)
+- Basic summarizer (fallback)
+
+### Storage
+- Digest writer
+- Memory store
+- Email sender
+
+---
+
+## Running locally
+
+Create virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
