@@ -8,15 +8,24 @@ def summarize(articles):
     headlines = "\n".join([a["title"] for a in articles])
 
     prompt = f"""
-Summarize today's news into:
-- Top global developments
-- India news
-- Technology news
-- One interesting story
+You are generating a factual news intelligence briefing.
+
+Rules:
+- Use only the provided headlines
+- Do not infer missing facts
+- Do not fabricate details
+- Keep summaries concise
+
+Group into:
+- Global
+- India
+- Technology
+- Interesting
 
 Headlines:
 {headlines}
 """
+
 
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
