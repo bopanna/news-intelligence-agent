@@ -11,7 +11,13 @@ def load_memory():
         return {}
 
     with open(MEMORY_FILE, "r") as f:
-        return json.load(f)
+        data = json.load(f)
+
+    # handle old list-based memory
+    if isinstance(data, list):
+        return {}
+
+    return data
 
 
 def save_memory(memory):
