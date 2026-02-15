@@ -1,3 +1,9 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+
 from collector.news_api import fetch_news
 from collector.rss import fetch_rss
 from summarizer.summarize import summarize_articles
