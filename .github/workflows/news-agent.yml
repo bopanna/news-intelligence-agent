@@ -25,6 +25,7 @@ jobs:
       - name: Run agent
         run: python -m main
         env:
+          PYTHONPATH: .
           MODEL_PROVIDER: openai
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
